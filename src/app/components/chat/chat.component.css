@@ -1,0 +1,98 @@
+.maincontainer{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.userlist{
+    width: 20vw;
+    height: auto;
+     height: 99%;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+    border: 1px solid orange;
+     .usersName{
+        width: 100%;
+        border: 1px solid black;
+        height: 10vh;
+        cursor: pointer;
+    }
+
+}
+
+.chatContent{
+    width: 80vw;
+    height: 99%;
+    border: 1px solid blue;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    .chatContent_header{
+        width: inherit;
+        text-align: left;
+        background-color: #1f7e23;;
+        height: 10%;
+    }
+    .chatContent_messages{
+        width: inherit;
+        height: 79%;
+        color: white;
+        flex-grow: 1;
+        overflow-y: scroll;
+          display: flex;
+    flex-direction: column;
+    .messages{
+  display: flex;
+flex-wrap: wrap;
+word-break: break-all;
+  flex-direction: row;
+  margin: 10px;
+  padding: 5px;
+  .text{
+    background-color: orange;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 50%;
+  }
+}
+    }
+    .chatContent_input{
+        width: inherit;
+        height: 10%;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:10px;
+        input{
+            width: 70%;
+            height: 50%;
+            border: none;
+            outline: none;
+        }
+        button{
+            width: 10%;
+            height: 50%;
+            border: none;
+            border-radius: 10px;
+            background-color: #1f7e23;
+            color: white;
+            font-weight: bold;
+        }
+    }
+}
+.nodDataMsg{
+  display: flex;
+  justify-content: center;
+  width: inherit;
+  height: inherit;
+  align-items: center;
+  color: white;
+}
+

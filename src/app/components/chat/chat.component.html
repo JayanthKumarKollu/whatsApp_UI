@@ -1,0 +1,45 @@
+
+<div class="maincontainer">
+    <div class="userlist">
+        @for(user of usersList$ | async ; track user._id){
+            <div class="usersName" (click)="selectedUser(user)">
+                <h2 >{{user.userName}}</h2>
+                @if(user.online){
+                    <h6>Online</h6>
+                }@else{
+                    <h6>Offline</h6>
+                }
+                <h6>{{user.typing}}</h6>
+            </div>
+        }
+    </div>
+    <div class="chatContent">
+        @if(selected_User_to_Chat.userName){      
+            <div class="chatContent_header">
+                <h1>{{selected_User_to_Chat.userName}}</h1>
+            </div>
+            <div class="chatContent_messages" >
+                @for(msg of messagesList; track msg._id){
+                   
+                <div class="messages" [ngStyle]="{'justify-content':loggedUserId == msg.from ? 'flex-end' : 'flex-start'}" >
+                    <p class="text"  >{{msg.message}} <span style="margin-left: 10px;
+    float: right;
+    font-size: 10px;
+    margin-top: 10px;">{{msg.time}}</span></p>
+                </div>
+                } 
+                @if(typingIndicator){
+                    <h6>{{typingIndicator}}</h6>
+                }@else{
+                    <h6>not typing</h6>
+                }
+            </div>
+            <div class="chatContent_input">              
+                <input type="text" [(ngModel)]="message" placeholder="Type a message." (input)="onTyping()">
+                <button (click)="sendMsg()">send</button>
+            </div>            
+        }@else{
+        <h1 class="nodDataMsg">Please  select a user to chat.</h1>
+        }
+    </div>
+</div>

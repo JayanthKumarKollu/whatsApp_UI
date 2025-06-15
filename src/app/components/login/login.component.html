@@ -1,0 +1,18 @@
+<div class="maincontainer">
+    <div class="sub_maincontainer">
+        @if(!login){
+        <h3>LogIn</h3>
+        <input type="text" placeholder="User Name" [(ngModel)]="userName">
+        <input type="password" placeholder="Password" [(ngModel)]="userPass">
+        <button (click)="authenticate()">Login</button>
+        <p (click)="togglelogin()">Create Account.</p>
+        }@else{
+        <h3>Register</h3>
+        <input type="text" placeholder="User Name" [(ngModel)]="userName">
+        <input type="email" placeholder="Email" [(ngModel)]="userEmail">
+        <input type="password" placeholder="Password" [(ngModel)]="userPass">
+        <button (click)="addUser()">Register</button>
+        <p (click)="togglelogin()">Log In.</p>
+        }
+    </div>
+</div>
