@@ -1,3 +1,3 @@
 export const environment = {
-    baseUrl:'http://localhost:3000'
+    baseUrl:'https://whatsapp-clone-server-3093.onrender.com'
 };
