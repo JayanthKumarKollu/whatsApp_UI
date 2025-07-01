@@ -17,7 +17,7 @@ export class SocketServService {
   constructor() { }
 
   connect(){
-    this.socket=io(environment.baseUrl);
+    this.socket=io("https://whatsapp-clone-server-3093.onrender.com");
    
   }
   setuserId(id:any){
