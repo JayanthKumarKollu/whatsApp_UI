@@ -71,7 +71,7 @@ usersList$ = combineLatest([this.allusersList$,this.onlineUsers$,this.isTyping$]
 sendMsg(){
   console.log("sending data0",this.userID)
  this.socketSer.sendMsg(this.message,this.socketSer.getloggedUserId(),this.selected_User_to_Chat._id);
- this.message='';
+ this.message=''; 
 }
 selectedUser(user:any){
   console.log("selected usr",user)
